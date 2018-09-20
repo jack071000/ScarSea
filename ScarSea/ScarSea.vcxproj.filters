@@ -1,17 +1,246 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <ClCompile Include="Sea.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="App.cpp">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>FrameWork\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>FrameWork\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>FrameWork\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceMgr.cpp">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDirector.cpp">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMgr.cpp">
+      <Filter>Game\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>Game\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="MainScreen.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Intro.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>FrameWork\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Suburb.cpp">
+      <Filter>Game\Scene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Game\Dude</Filter>
+    </ClCompile>
+    <ClCompile Include="Clam.cpp">
+      <Filter>Game\Dude</Filter>
+    </ClCompile>
+    <ClCompile Include="Coral.cpp">
+      <Filter>Game\Dude</Filter>
+    </ClCompile>
+    <ClCompile Include="Anemone.cpp">
+      <Filter>Game\Dude</Filter>
+    </ClCompile>
+    <ClCompile Include="Cannon.cpp">
+      <Filter>Game\Dude</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Fairy.cpp">
+      <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="ShieldSoldier.cpp">
+      <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="FootMan.cpp">
+      <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Octopus.cpp">
+      <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="SOil.cpp">
+      <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Gold.cpp">
+      <Filter>Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>Game\Scene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>Game\Scene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Scene\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CannonSpot.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMgr.cpp">
+      <Filter>Game\Scene\Player</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceMgr.h">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDirector.h">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMgr.h">
+      <Filter>Game\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>FrameWork\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>Game\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="MainScreen.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Intro.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Suburb.h">
+      <Filter>Game\Scene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Game\Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Coral.h">
+      <Filter>Game\Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Clam.h">
+      <Filter>Game\Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Anemone.h">
+      <Filter>Game\Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Cannon.h">
+      <Filter>Game\Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Fairy.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="ShieldSoldier.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="FootMan.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Octopus.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="SOil.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Gold.h">
+      <Filter>Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>Game\Scene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Shop.h">
+      <Filter>Game\Scene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="DudeHeader.h">
+      <Filter>Game\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemysHeader.h">
+      <Filter>Game\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Scene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CannonSpot.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMgr.h">
+      <Filter>Game\Scene\Player</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Game">
+      <UniqueIdentifier>{3430b213-f094-42af-82de-5c7e50a50d2b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Game\Enemy">
+      <UniqueIdentifier>{e8e7b905-014a-4095-9095-b4fdc248d1af}</UniqueIdentifier>
     </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Game\Dude">
+      <UniqueIdentifier>{8ec70a78-1f93-473f-8fe2-f396d3241469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\UI">
+      <UniqueIdentifier>{f36b2ef0-00a4-49eb-be65-d099df876f8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Mgrs">
+      <UniqueIdentifier>{586eb827-b0ac-4573-9bc9-d3a815c80e76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork">
+      <UniqueIdentifier>{67beab03-0e22-4b80-abfc-ecb963739894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Mgrs">
+      <UniqueIdentifier>{11136be4-5526-4fb0-bb7a-dc5e400cdd07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Node">
+      <UniqueIdentifier>{8991183b-4560-419f-a2e8-d684cba33f0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{b43dd194-9318-4ac5-a55e-ae9ff4877986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\Stage">
+      <UniqueIdentifier>{d7f48235-b516-49c6-999e-a467f2ac2cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\Player">
+      <UniqueIdentifier>{4e8df696-0918-466f-9fe4-a88afc34e3ac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

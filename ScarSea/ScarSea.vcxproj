@@ -29,14 +29,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -69,14 +69,25 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -94,10 +105,12 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -115,6 +128,81 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Anemone.cpp" />
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Cannon.cpp" />
+    <ClCompile Include="CannonSpot.cpp" />
+    <ClCompile Include="Clam.cpp" />
+    <ClCompile Include="CollisionMgr.cpp" />
+    <ClCompile Include="Coral.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Fairy.cpp" />
+    <ClCompile Include="Font.cpp" />
+    <ClCompile Include="FootMan.cpp" />
+    <ClCompile Include="Gold.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Intro.cpp" />
+    <ClCompile Include="MainScreen.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectMgr.cpp" />
+    <ClCompile Include="Octopus.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerMgr.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="ResourceMgr.cpp" />
+    <ClCompile Include="SceneDirector.cpp" />
+    <ClCompile Include="Sea.cpp" />
+    <ClCompile Include="ShieldSoldier.cpp" />
+    <ClCompile Include="Shop.cpp" />
+    <ClCompile Include="SOil.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Suburb.cpp" />
+    <ClCompile Include="Texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Anemone.h" />
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="App.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Cannon.h" />
+    <ClInclude Include="CannonSpot.h" />
+    <ClInclude Include="Clam.h" />
+    <ClInclude Include="CollisionMgr.h" />
+    <ClInclude Include="Coral.h" />
+    <ClInclude Include="DudeHeader.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemysHeader.h" />
+    <ClInclude Include="Fairy.h" />
+    <ClInclude Include="Font.h" />
+    <ClInclude Include="FootMan.h" />
+    <ClInclude Include="Gold.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Intro.h" />
+    <ClInclude Include="MainScreen.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectMgr.h" />
+    <ClInclude Include="Octopus.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerMgr.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="ResourceMgr.h" />
+    <ClInclude Include="SceneDirector.h" />
+    <ClInclude Include="ShieldSoldier.h" />
+    <ClInclude Include="Shop.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="SOil.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Stage.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Suburb.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
