@@ -8,7 +8,6 @@ MainScreen::MainScreen()
 	m_BackGround->Translate(1920 / 2, 1080 / 2);
 }
 
-
 MainScreen::~MainScreen()
 {
 }

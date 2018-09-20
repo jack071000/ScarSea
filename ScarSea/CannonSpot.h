@@ -14,6 +14,8 @@ public:
 	CannonSpot();
 	~CannonSpot();
 
+	void Init(float x, float y);
+
 public:
 	void ActivateButton() { m_ButtonActive = true; }
 	void DisableButton() { m_ButtonActive = false; }

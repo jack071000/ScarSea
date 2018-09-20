@@ -10,8 +10,7 @@ Suburb::Suburb()
 	m_BackGround->Translate(960, 540);
 
 	SetMapPoint();
-	auto enemy = new Fairy(mapPoint);
-	ObjMgr->KeepObject(enemy);
+	
 
 	SetFishCannonPoint();
 }
@@ -34,21 +33,54 @@ void Suburb::SetMapPoint()
 	mapPoint[9] = { Vec2(410 , 595) , 1 };
 	mapPoint[10] = { Vec2(0  , 900) , 2 };
 }
-struct FISHCANNONPOINT
-{
-	Sprite* m_PlusButton;
-	bool m_Intalled;
-	Cannon* m_Cannon;
-	D3DXVECTOR2 Pos;
-};
 
 void Suburb::SetFishCannonPoint()
 {
+	mapCannonSpot[0].Init(1657, 388);
+	mapCannonSpot[1].Init(1416, 225);
+	mapCannonSpot[2].Init(1490, 580);
+	mapCannonSpot[3].Init(1210, 427);
+	mapCannonSpot[4].Init(975, 275);
+	mapCannonSpot[5].Init(1085, 755);
+	mapCannonSpot[6].Init(840, 590);
+	mapCannonSpot[7].Init(740, 905);
+	mapCannonSpot[8].Init(477, 740);
+	mapCannonSpot[9].Init(120, 630);
+
+	for (int i = 0; i < 10; i++)
+	{
+		ObjMgr->KeepObject(&mapCannonSpot[i]);
+	}
+
 }
 
 
 void Suburb::Update(float deltaTime)
 {
+	m_Time += deltaTime;
+	if (m_Time > 3)
+	{
+		auto enemy = new Fairy(mapPoint);
+		ObjMgr->KeepObject(enemy);
+
+		m_Time = 0;
+	}
+
+	if (PlayerMgr::GetInst()->GetPlayer()->m_Install)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			mapCannonSpot[i].ActivateButton();
+		}
+	}
+
+	if (PlayerMgr::GetInst()->GetPlayer()->m_Install == false)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			mapCannonSpot[i].DisableButton();
+		}
+	}
 }
 
 void Suburb::Render()

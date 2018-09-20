@@ -51,6 +51,8 @@ void ObjectMgr::Update(float deltaTime)
 			{
 				(*iter)->OnCollision((*iter2));
 				(*iter2)->OnCollision((*iter));
+
+				return;
 			}
 		}
 	}

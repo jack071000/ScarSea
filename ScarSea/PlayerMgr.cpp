@@ -4,6 +4,7 @@
 
 PlayerMgr::PlayerMgr()
 {
+	player = new Player();
 }
 
 

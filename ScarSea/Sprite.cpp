@@ -55,7 +55,18 @@ void Sprite::Render()
 			m_Parent->m_Position.x + m_Size.x / 2, m_Parent->m_Position.y + m_Size.y / 2);
 	}
 
-	if (m_Visible == true)
+	if (m_Parent)
+	{
+		SetRect(&m_Collision, m_Parent->m_Position.x - m_Size.x / 2, m_Parent->m_Position.y - m_Size.y / 2,
+			m_Parent->m_Position.x + m_Size.x / 2, m_Parent->m_Position.y + m_Size.y / 2);
+	}
+	else
+	{
+		SetRect(&m_Collision, m_Position.x - m_Size.x / 2, m_Position.y - m_Size.y / 2,
+			m_Position.x + m_Size.x / 2, m_Position.y + m_Size.y / 2);
+	}
+
+	if (m_Visible == false)
 		return;
 
  	m_pSp->Begin(D3DXSPRITE_ALPHABLEND);

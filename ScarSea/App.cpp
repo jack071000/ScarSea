@@ -90,11 +90,11 @@ LRESULT App::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 		PostQuitMessage(0);
 		App::GetInst()->Release();
 		break;
-	case WM_RBUTTONDOWN:
+	case WM_LBUTTONDOWN:
 		INPUT->ButtonDown(true);
 		break;
 
-	case WM_RBUTTONUP:
+	case WM_LBUTTONUP:
 		INPUT->ButtonDown(false);
 		break;
 	}

@@ -10,9 +10,9 @@ private:
 	Sprite* m_BombMagicUI;
 	Sprite* m_TimeMagicUI;
 
+public:
 	CANNONTYPE m_InstallCannonType;
 	bool m_Install;
-
 public:
 	Player();
 	~Player();

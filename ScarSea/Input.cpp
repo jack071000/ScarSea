@@ -55,9 +55,12 @@ void Input::KeyBoardUpdate()
 
 void Input::MouseUpdate()
 {
-	POINT point;
-	GetCursorPos(&point);
+	POINT position;
+	GetCursorPos(&position);
 
-	m_MousePosition.x = (float)(point.x);
-	m_MousePosition.y = (float)(point.y);
+	ScreenToClient(App::GetInst()->GetHwnd(), &position);
+
+	m_MousePosition.x = static_cast<float>(position.x);
+	m_MousePosition.y = static_cast<float>(position.y);
+	printf("Mouse : %f %f \n", m_MousePosition.x, m_MousePosition.y);
 }

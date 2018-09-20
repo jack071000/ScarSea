@@ -10,7 +10,7 @@ private:
 	Sprite * m_AnemoneImage;
 
 	Sprite* m_PushButton;
-	bool m_PushedButton;
+	bool m_bPushedButton;
 
 public:
 	Shop();
