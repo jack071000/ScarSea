@@ -50,6 +50,8 @@ void App::Run()
 			fAccTime += delta;
 			Prev = current;
 
+			printf("Button : %d\n",INPUT->GetButtonDown());
+
 			Renderer::GetInst()->Begin();
 			SceneDirector::GetInst()->Update(0.1);
 			SceneDirector::GetInst()->Render();

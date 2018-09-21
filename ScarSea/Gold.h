@@ -1,10 +1,14 @@
 #pragma once
 class Gold : public Object
 {
+	Font* m_THGold;
 	Font* m_HGold;
 	Font* m_TGold;
 	Font* m_OGold;
 
+	Sprite* m_GoldUI;
+
+	int m_iTHGold;
 	int m_iHGold;
 	int m_iTGold;
 	int m_iOGold;

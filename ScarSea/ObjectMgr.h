@@ -10,7 +10,7 @@ public:
 	std::list<Object*> m_Objects;
 	std::list<Object*> m_Enemys;
 	std::list<Object*> m_Bullets;
-
+	bool m_bDoubleSpeed;
 	struct stLISTsort
 	{
 		bool operator() (const Object *pObject1, const Object *pObject2) const
@@ -30,8 +30,8 @@ public:
 	void Update(float deltaTime);
 	void Render();
 
-
-	
+	void SetDoubleSpeed();
+	void SetNormalSpeed();
 
 public:
 	void KeepObject(Object* obj);

@@ -6,6 +6,9 @@ class Suburb : public Stage
 	CannonSpot mapCannonSpot[10];
 
 public:
+
+
+public:
 	Suburb();
 	~Suburb();
 
@@ -14,4 +17,7 @@ public:
 
 	void Update(float deltaTime);
 	void Render();
+
+	void ActivateButton();
+	void DisableButton();
 };

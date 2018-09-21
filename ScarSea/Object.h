@@ -19,6 +19,8 @@ public:
 
 	std::wstring m_Name;
 
+	int m_Damage;
+
 public:
 	Object();
 	~Object();

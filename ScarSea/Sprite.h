@@ -17,6 +17,9 @@ public:
 public:
 	RECT GetRect() { return m_Rect;}
 	void SetRectSize(float x, float y);
+
+	void SetCollisionWithParent();
+
 	static Sprite* Create(std::wstring fileName);
 	void Render();
 };

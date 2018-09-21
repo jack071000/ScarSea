@@ -12,6 +12,7 @@ Object::Object() :
 	, m_Visible(true)
 	, m_Layer(0)
 	, m_Name(L"")
+	, m_Damage(0)
 {
 	m_pDev->AddRef();
 	D3DXMatrixIdentity(&m_wMat);
@@ -24,7 +25,7 @@ Object::~Object()
 
 Matrix  Object::GetMatrix()
 {
-	D3DXMatrixTransformation2D(&m_wMat, NULL, NULL, &m_Scale, NULL, m_Rotation, &m_Position);
+	D3DXMatrixTransformation2D(&m_wMat, NULL , NULL, &m_Scale, NULL, m_Rotation, &m_Position);
 
 	if (m_Parent)
 		m_wMat *= m_Parent->GetMatrix();

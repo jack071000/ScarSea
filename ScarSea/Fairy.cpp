@@ -23,7 +23,6 @@ void Fairy::OnCollision(Object * other)
 		m_Minus += 1;
 
 	m_Hp -= 1;
-
 	m_HpBar->SetRectSize(m_Minus, 1.f);
 }
 

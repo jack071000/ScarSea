@@ -33,6 +33,7 @@ void Enemy::Update(float deltaTime)
 {
 	if (m_Hp <= 0)
 	{
+		PMgr->m_iKillCount++;
 		ObjMgr->RemoveObject(this);
 		PlayerMgr::GetInst()->GetPlayer()->m_Gold->PlusGold(10);
 	}

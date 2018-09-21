@@ -14,6 +14,8 @@ public:
 	bool m_Install;
 	Gold * m_Gold;	//플레이어 돈
 
+	int m_iKillCount;
+
 public:
 	Player();
 	~Player();

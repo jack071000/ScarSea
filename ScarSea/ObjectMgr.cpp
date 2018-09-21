@@ -4,6 +4,7 @@
 
 
 ObjectMgr::ObjectMgr()
+	: m_bDoubleSpeed(0)
 {
 }
 
@@ -62,6 +63,12 @@ void ObjectMgr::Update(float deltaTime)
 		(*iter)->Update(deltaTime);
 	}
 
+	if(m_bDoubleSpeed)
+		for (auto iter = m_Objects.begin(); iter != m_Objects.end(); ++iter)
+		{
+			(*iter)->Update(deltaTime);
+		}
+	
 }
 
 void ObjectMgr::Render()
@@ -72,6 +79,14 @@ void ObjectMgr::Render()
 	{
 		(*iter)->Render();
 	}
+}
+
+void ObjectMgr::SetDoubleSpeed()
+{
+}
+
+void ObjectMgr::SetNormalSpeed()
+{
 }
 
 void ObjectMgr::KeepObject(Object * obj)

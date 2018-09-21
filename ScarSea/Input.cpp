@@ -62,5 +62,5 @@ void Input::MouseUpdate()
 
 	m_MousePosition.x = static_cast<float>(position.x);
 	m_MousePosition.y = static_cast<float>(position.y);
-	printf("Mouse : %f %f \n", m_MousePosition.x, m_MousePosition.y);
+	//printf("Mouse : %f %f \n", m_MousePosition.x, m_MousePosition.y);
 }

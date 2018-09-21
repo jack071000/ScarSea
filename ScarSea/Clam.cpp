@@ -6,8 +6,10 @@ Clam::Clam(Vec2 Pos) : Cannon(Pos)
 {
 	m_CannonSp= Sprite::Create(L"Painting/Run.png");
 	m_CannonSp->SetParent(this);
+
 	m_Delay = 2.f;
 	m_Name = L"Clam";
+	m_Damage = 1;
 }
 
 Clam::~Clam()
@@ -22,7 +24,24 @@ void Clam::Attack(Vec2 dir, Vec2 Pos)
 
 void Clam::Update(float deltaTime)
 {
+	m_CannonSp->SetCollisionWithParent();
+
 	Cannon::Update(deltaTime);
+
+	switch (m_UpgradeLevel)
+	{
+	case 1:
+		m_CannonSp->Init(L"Painting/Run2.png");
+		break;
+
+	case 2:
+		m_CannonSp->Init(L"Painting/Run3.png");
+		break;
+
+	case 3:
+		m_CannonSp->Init(L"Painting/Run4.png");
+		break;
+	}
 
 	if (m_Dir != Vec2(0.f,0.f))
 	{

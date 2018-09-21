@@ -7,6 +7,7 @@ Player::Player()
 	, m_InstallCannonType(CANNONTYPE::NONE)
 	, m_MagicPoint(0)
 	, m_Time(0)
+	, m_iKillCount(0)
 {
 	m_Gold = new Gold();
 	m_Gold->SetPosition(50, 100);

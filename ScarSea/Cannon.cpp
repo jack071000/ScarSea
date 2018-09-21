@@ -55,6 +55,8 @@ void Cannon::Update(float deltaTime)
 		Attack();
 
 	//캐논을 눌렀을 때
+	if (m_UpgradeLevel >= 3)
+		return;
 
 	if(m_UpgradeButtonOn == false)
 	if (CollisionMgr::GetInst()->MouseWithBoxCollide(m_CannonSp->m_Collision))

@@ -6,14 +6,20 @@
 
 Suburb::Suburb()
 {
+	m_iWave1EnemyCount = 30;
+	m_iWave2EnemyCount = 35;
+	m_iWave3EnemyCount = 40;
+
 	m_BackGround = Sprite::Create(L"Painting/Map.png");
 	m_BackGround->Translate(960, 540);
 
 	ObjMgr->KeepObject(m_BackGround);
 	m_BackGround->m_Layer = -1;
 
+	PMgr->m_Gold->PlusGold(2000);
+
 	SetMapPoint();
-	ObjMgr->KeepObject(PlayerMgr::GetInst()->GetPlayer());
+	ObjMgr->KeepObject(PMgr);
 	SetFishCannonPoint();
 }
 
@@ -58,33 +64,85 @@ void Suburb::SetFishCannonPoint()
 
 void Suburb::Update(float deltaTime)
 {
-	m_Time += deltaTime;
-	if (m_Time > 3)
-	{
-		auto enemy = new Fairy(mapPoint);
-		ObjMgr->KeepObject(enemy);
+	Stage::Update(deltaTime);
 
-		m_Time = 0;
+	switch (m_State)
+	{
+	case StageState::WAVE1:
+		m_iLeftWave = 2;
+		m_Time += deltaTime;
+
+		if (m_Time > 3)
+		{
+			auto enemy = new Fairy(mapPoint);
+			ObjMgr->KeepObject(enemy);
+
+			
+
+			m_Time = 0;
+		}
+		break;
+
+	case StageState::WAVE2:
+		m_iLeftWave = 1;
+		m_Time += deltaTime;
+
+		if (m_Time > 3)
+		{
+			auto enemy = new Fairy(mapPoint);
+			ObjMgr->KeepObject(enemy);
+			m_Time = 0;
+		}
+		break;
+
+	case StageState::WAVE3:
+		m_iLeftWave = 0;
+		m_Time += deltaTime;
+
+		if (m_Time > 3)
+		{
+			auto enemy = new Fairy(mapPoint);
+			ObjMgr->KeepObject(enemy);
+			m_Time = 0;
+		}
+		break;
 	}
+
+
+
 
 	if (PMgr->m_Install)
 	{
-		for (int i = 0; i < 10; i++)
-		{
-			mapCannonSpot[i].ActivateButton();
-		}
+		ActivateButton();
 	}
 
 	if (PMgr->m_Install == false)
 	{
-		for (int i = 0; i < 10; i++)
-		{
-			mapCannonSpot[i].DisableButton();
-		}
+		DisableButton();
 	}
 }
 
 void Suburb::Render()
 {
-	 
+	Stage::Render();
+}
+
+void Suburb::ActivateButton()
+{
+	
+		for (int i = 0; i < 10; i++)
+		{
+			mapCannonSpot[i].ActivateButton();
+		}
+	
+}
+
+void Suburb::DisableButton()
+{
+	
+		for (int i = 0; i < 10; i++)
+		{
+			mapCannonSpot[i].DisableButton();
+		}
+	
 }

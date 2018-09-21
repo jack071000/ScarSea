@@ -62,6 +62,7 @@ void Shop::Update(float deltaTime)
 				INPUT->ButtonDown(false);
 			}
 		}
+
 		//이미 상점 버튼을 눌렀다면
 		else
 		{
@@ -89,6 +90,11 @@ void Shop::Update(float deltaTime)
 		//조개대포
 		if (INPUT->GetButtonDown())
 		{
+			if (PMgr->m_Gold->GetGold() > 200)
+				PMgr->m_Gold->MinusGold(200);
+			else
+				return;
+
 			//플레이어에게 + 모양을 띄우라는 변수를 True 
 			//플레이어가 설치
 			PlayerMgr::GetInst()->GetPlayer()->m_Install = true;

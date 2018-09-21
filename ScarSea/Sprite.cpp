@@ -30,7 +30,16 @@ bool Sprite::Init(std::wstring fileName)
 
 void Sprite::SetRectSize(float x, float y)
 {
-	SetRect(&m_Rect, 0, 0, (m_Size.x / x),(m_Size.y / y));
+	SetRect(&m_Rect, 0, 0, m_Size.x / x, m_Size.y / y);
+}
+
+void Sprite::SetCollisionWithParent()
+{
+	m_Collision.left = (long)(m_Parent->m_Position.x - m_Size.x / 2);
+	m_Collision.right = (long)(m_Parent->m_Position.x + m_Size.x / 2);
+
+	m_Collision.top = (long)(m_Parent->m_Position.y - m_Size.y / 2);
+	m_Collision.bottom = (long)(m_Parent->m_Position.y + m_Size.y / 2);
 }
 
 Sprite * Sprite::Create(std::wstring fileName)
@@ -53,6 +62,7 @@ void Sprite::Render()
 	{
 		SetRect(&m_Parent->m_Collision, m_Parent->m_Position.x - m_Size.x / 2, m_Parent->m_Position.y - m_Size.y / 2,
 			m_Parent->m_Position.x + m_Size.x / 2, m_Parent->m_Position.y + m_Size.y / 2);
+
 	}
 	
  	m_Collision.left = (long)(m_Position.x - m_Size.x / 2);
