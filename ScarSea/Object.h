@@ -15,6 +15,10 @@ public:
 
 	bool m_Visible;
 
+	int m_Layer;
+
+	std::wstring m_Name;
+
 public:
 	Object();
 	~Object();

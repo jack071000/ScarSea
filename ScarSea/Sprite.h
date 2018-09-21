@@ -11,6 +11,7 @@ private:
 	Sprite();
 	~Sprite();
 
+public:
 	bool Init(std::wstring fileName);
 
 public:

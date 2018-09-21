@@ -12,9 +12,9 @@ Stage::Stage()
 	m_LeftWave = new Font();
 	m_Shop = new Shop();
 
-	ObjMgr->KeepObject(m_LeftWaveTime[0]); //남은 시간
-	ObjMgr->KeepObject(m_LeftWaveTime[1]); //남은 시간
-	ObjMgr->KeepObject(m_LeftWave); //남은 웨이브
+	//ObjMgr->KeepObject(m_LeftWaveTime[0]); //남은 시간
+	//ObjMgr->KeepObject(m_LeftWaveTime[1]); //남은 시간
+	//ObjMgr->KeepObject(m_LeftWave); //남은 웨이브
 	ObjMgr->KeepObject(m_Shop); //상점
 }
 

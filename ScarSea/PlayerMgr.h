@@ -1,4 +1,7 @@
 #pragma once
+
+#define PMgr PlayerMgr::GetInst()->GetPlayer()
+
 class Player;
 class PlayerMgr : public Singleton<PlayerMgr>
 {

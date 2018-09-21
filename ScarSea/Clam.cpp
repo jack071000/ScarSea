@@ -4,9 +4,10 @@
 
 Clam::Clam(Vec2 Pos) : Cannon(Pos)
 {
-	clam = Sprite::Create(L"Painting/Run.png");
-	clam->SetParent(this);
+	m_CannonSp= Sprite::Create(L"Painting/Run.png");
+	m_CannonSp->SetParent(this);
 	m_Delay = 2.f;
+	m_Name = L"Clam";
 }
 
 Clam::~Clam()
@@ -32,5 +33,7 @@ void Clam::Update(float deltaTime)
 
 void Clam::Render()
 {
-	clam->Render();
+	Cannon::Render();
+
+	m_CannonSp->Render();
 }

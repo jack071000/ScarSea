@@ -10,6 +10,8 @@ Object::Object() :
 	, m_Destroy(0)
 	, m_Parent(NULL)
 	, m_Visible(true)
+	, m_Layer(0)
+	, m_Name(L"")
 {
 	m_pDev->AddRef();
 	D3DXMatrixIdentity(&m_wMat);

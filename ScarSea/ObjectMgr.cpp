@@ -52,7 +52,7 @@ void ObjectMgr::Update(float deltaTime)
 				(*iter)->OnCollision((*iter2));
 				(*iter2)->OnCollision((*iter));
 
-				return;
+				//return;
 			}
 		}
 	}
@@ -66,6 +66,8 @@ void ObjectMgr::Update(float deltaTime)
 
 void ObjectMgr::Render()
 {
+ 	m_Objects.sort(stLISTsort());
+
 	for (auto iter = m_Objects.begin(); iter != m_Objects.end(); ++iter)
 	{
 		(*iter)->Render();

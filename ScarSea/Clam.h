@@ -1,7 +1,6 @@
 #pragma once
 class Clam : public Cannon
 {
-	Sprite* clam;
 public:
 	Clam(Vec2 Pos);
 	~Clam();

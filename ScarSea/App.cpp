@@ -82,6 +82,17 @@ void App::Release()
 	Renderer::GetInst()->Release();
 }
 
+bool App::IsInWindowRect(float x, float y)
+{
+	if (x > 0 && x < m_Width)
+	{
+		if (y > 0 && y < m_Height)
+			return true;
+	}
+
+	return false;
+}
+
 LRESULT App::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (Msg)
@@ -114,7 +125,7 @@ bool App::_CreateWindow()
 	DWORD Style = 0;
 
 	if (m_WindowMode)
-		Style = WS_OVERLAPPEDWINDOW;
+		Style = WS_POPUP;
 	else
 		Style = WS_POPUP | WS_EX_TOPMOST;
 

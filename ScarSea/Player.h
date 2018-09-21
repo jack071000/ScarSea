@@ -2,7 +2,6 @@
 class Player : public Object
 {
 private:
-	Gold * m_Gold;	//플레이어 돈
 	int m_MagicPoint;
 	int m_Time;
 
@@ -13,6 +12,8 @@ private:
 public:
 	CANNONTYPE m_InstallCannonType;
 	bool m_Install;
+	Gold * m_Gold;	//플레이어 돈
+
 public:
 	Player();
 	~Player();

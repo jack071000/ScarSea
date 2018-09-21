@@ -24,6 +24,10 @@ void Bullet::OnCollision(Object * other)
 void Bullet::Update(float deltaTime)
 {
 	Translate(m_Dir.x * m_Speed * deltaTime, m_Dir.y *m_Speed * deltaTime);
+	if (App::GetInst()->IsInWindowRect(m_Position.x, m_Position.y) == false)
+	{
+		ObjMgr->RemoveObject(this);
+	}
 }
 
 void Bullet::Render()

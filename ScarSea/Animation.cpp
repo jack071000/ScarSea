@@ -56,11 +56,13 @@ void Animation::Init(int delay, bool play)
 void Animation::Update(float deltaTime)
 {
 	m_FrameCount++;
-	if (m_FrameCount > m_Delay)
-	{
-		m_CurrentFrame++;
-		m_FrameCount = 0;
-	}
+
+	if(m_AutoPlay == true)
+		if (m_FrameCount > m_Delay)
+		{
+			m_CurrentFrame++;
+			m_FrameCount = 0;
+		}
 
 	if (m_CurrentFrame > m_Anim.size() - 1)
 	{

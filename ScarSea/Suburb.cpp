@@ -9,9 +9,11 @@ Suburb::Suburb()
 	m_BackGround = Sprite::Create(L"Painting/Map.png");
 	m_BackGround->Translate(960, 540);
 
-	SetMapPoint();
-	
+	ObjMgr->KeepObject(m_BackGround);
+	m_BackGround->m_Layer = -1;
 
+	SetMapPoint();
+	ObjMgr->KeepObject(PlayerMgr::GetInst()->GetPlayer());
 	SetFishCannonPoint();
 }
 
@@ -51,7 +53,6 @@ void Suburb::SetFishCannonPoint()
 	{
 		ObjMgr->KeepObject(&mapCannonSpot[i]);
 	}
-
 }
 
 
@@ -66,7 +67,7 @@ void Suburb::Update(float deltaTime)
 		m_Time = 0;
 	}
 
-	if (PlayerMgr::GetInst()->GetPlayer()->m_Install)
+	if (PMgr->m_Install)
 	{
 		for (int i = 0; i < 10; i++)
 		{
@@ -74,7 +75,7 @@ void Suburb::Update(float deltaTime)
 		}
 	}
 
-	if (PlayerMgr::GetInst()->GetPlayer()->m_Install == false)
+	if (PMgr->m_Install == false)
 	{
 		for (int i = 0; i < 10; i++)
 		{
@@ -85,5 +86,5 @@ void Suburb::Update(float deltaTime)
 
 void Suburb::Render()
 {
-	m_BackGround->Render();
+	 
 }

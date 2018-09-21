@@ -20,6 +20,7 @@ public:
 	bool Init(int width, int height, bool windowMode);
 	void Run();
 	void Release();
+	bool IsInWindowRect(float x, float y);
 
 	HWND GetHwnd() {
 		return m_Hwnd;

@@ -34,6 +34,7 @@ void Enemy::Update(float deltaTime)
 	if (m_Hp <= 0)
 	{
 		ObjMgr->RemoveObject(this);
+		PlayerMgr::GetInst()->GetPlayer()->m_Gold->PlusGold(10);
 	}
 
 	if (5.f < D3DXVec2Length(&(m_Road[m_Order].Pos - m_Position)))
