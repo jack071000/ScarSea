@@ -20,10 +20,15 @@ protected:
 
 	float m_Speed;
 	float m_Time;
+	float m_CoE;
 
 	bool m_IsArrived;
 	int m_Order;
-	int m_Hp;
+	float m_Hp;
+	float m_MaxHp;
+
+public:
+	float m_Slow;
 
 public:
 	Enemy(MAPPOINT* point);

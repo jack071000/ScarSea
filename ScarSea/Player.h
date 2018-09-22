@@ -4,6 +4,11 @@ class Player : public Object
 private:
 	int m_MagicPoint;
 	int m_Time;
+	float m_SlowTime;
+
+	bool m_SlowMagicActive;
+
+	Sprite* m_SlowMagicRange;
 
 	Sprite* m_SlowMagicUI;
 	Sprite* m_BombMagicUI;

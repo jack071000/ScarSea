@@ -24,16 +24,21 @@ Cannon::~Cannon()
 void Cannon::Attack()
 {
 	D3DXVECTOR2 pos = { 0.f,0.f };
+	float Distance = m_AttackRange;
 
 	auto EnemyList = ObjMgr->m_Enemys;
 	auto iter = EnemyList.begin();
 
 	for (; iter != EnemyList.end(); ++iter)
 	{
-		if (m_AttackRange > D3DXVec2Length(&((*iter)->m_Position - m_Position)))
+		float dist = D3DXVec2Length(&((*iter)->m_Position - m_Position));
+		if (m_AttackRange > dist)
 		{
-			pos = (*iter)->m_Position;
-			break;
+			if (Distance > dist)
+			{
+				Distance = dist;
+				pos = (*iter)->m_Position;
+			}
 		}
 	}
 

@@ -50,10 +50,10 @@ void App::Run()
 			fAccTime += delta;
 			Prev = current;
 
-			printf("Button : %d\n",INPUT->GetButtonDown());
+			//printf("Button : %d\n",INPUT->GetButtonDown());
 
 			Renderer::GetInst()->Begin();
-			SceneDirector::GetInst()->Update(0.1);
+			SceneDirector::GetInst()->Update(delta);
 			SceneDirector::GetInst()->Render();
 			Renderer::GetInst()->End();
 
@@ -103,13 +103,13 @@ LRESULT App::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 		PostQuitMessage(0);
 		App::GetInst()->Release();
 		break;
-	case WM_LBUTTONDOWN:
-		INPUT->ButtonDown(true);
-		break;
+	//case WM_LBUTTONDOWN:
+	//	INPUT->ButtonDown(true);
+	//	break;
 
-	case WM_LBUTTONUP:
-		INPUT->ButtonDown(false);
-		break;
+	//case WM_LBUTTONUP:
+	//	INPUT->ButtonDown(false);
+	//	break;
 	}
 
 	return DefWindowProc(hWnd, Msg, wParam, lParam);

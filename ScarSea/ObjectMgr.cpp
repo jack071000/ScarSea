@@ -58,17 +58,18 @@ void ObjectMgr::Update(float deltaTime)
 		}
 	}
 
-	for (auto iter = m_Objects.begin(); iter != m_Objects.end(); ++iter)
+	if (INPUT->GetKey(VK_F4) == KeyState::UP)
 	{
-		(*iter)->Update(deltaTime);
+		m_bDoubleSpeed ^= true;
 	}
 
-	if(m_bDoubleSpeed)
-		for (auto iter = m_Objects.begin(); iter != m_Objects.end(); ++iter)
-		{
+	for (auto iter = m_Objects.begin(); iter != m_Objects.end(); ++iter)
+	{
+		if(m_bDoubleSpeed)
+			(*iter)->Update(deltaTime * 2);
+		else
 			(*iter)->Update(deltaTime);
-		}
-	
+	}
 }
 
 void ObjectMgr::Render()
